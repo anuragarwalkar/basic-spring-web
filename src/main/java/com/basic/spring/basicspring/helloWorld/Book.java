@@ -1,4 +1,4 @@
-package com.basic.spring.basicspring;
+package com.basic.spring.basicspring.helloWorld;
 
 public class Book {
     private long id;
