@@ -2,9 +2,16 @@ package com.basic.spring.basicspring.user;
 
 import java.util.Date;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+
 class User {
     private Integer id;
+
+    @Size(min = 2, message = "Name should have at least two charachters")
     private String name;
+
+    @Past
     private Date birthDate;
 
     public Integer getId() {
@@ -42,7 +49,4 @@ class User {
         return "User [birthDate=" + birthDate + ", id=" + id + ", name=" + name + "]";
     }
 
-    
-
-    
 }
