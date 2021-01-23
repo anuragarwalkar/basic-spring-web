@@ -1,14 +1,14 @@
 package com.basic.spring.basicspring.filtering;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonFilter;
 
-@JsonIgnoreProperties(value = { "filed1" })
+// @JsonIgnoreProperties(value = { "filed1" })
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
     private String filed1;
     private String filed2;
 
-    @JsonIgnore
+    // @JsonIgnore
     private String filed3;
 
     public SomeBean(String filed1, String filed2, String filed3) {
