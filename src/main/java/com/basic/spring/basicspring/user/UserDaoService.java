@@ -12,12 +12,12 @@ import java.util.List;
 public class UserDaoService {
     private static List<User> users = new ArrayList<>();
 
-    private int usersCount = 3;
+    private Long usersCount = 3L;
 
     static {
-        users.add(new User(1, "anurag arwalkar", new Date()));
-        users.add(new User(2, "vaishali arwalkar", new Date()));
-        users.add(new User(3, "sameer arwalkar", new Date()));
+        users.add(new User(1L, "anurag arwalkar", new Date()));
+        users.add(new User(2L, "vaishali arwalkar", new Date()));
+        users.add(new User(3L, "sameer arwalkar", new Date()));
     }
 
     public List<User> findAll() {
@@ -33,7 +33,7 @@ public class UserDaoService {
         return user;
     }
 
-    public User findOne(int id) {
+    public User findOne(Long id) {
         for (User user : users) {
             if (user.getId() == id) {
                 return user;
@@ -43,7 +43,7 @@ public class UserDaoService {
         return null;
     }
 
-    public User deleteById(int id) {
+    public User deleteById(Long id) {
         Iterator<User> iterator = users.iterator();
 
         while (iterator.hasNext()) {

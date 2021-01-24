@@ -1,12 +1,20 @@
 package com.basic.spring.basicspring.user;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
-class User {
-    private Integer id;
+@Entity
+public class User {
+    @Id
+    @GeneratedValue
+    private Long id;
 
     @Size(min = 2, message = "Name should have at least two charachters")
     private String name;
@@ -14,11 +22,14 @@ class User {
     @Past
     private Date birthDate;
 
-    public Integer getId() {
+    @OneToMany(mappedBy = "user")
+    private List<Post> posts;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -38,7 +49,10 @@ class User {
         this.birthDate = birthDate;
     }
 
-    public User(Integer id, String name, Date date) {
+    public User() {
+    }
+
+    public User(Long id, String name, Date date) {
         this.id = id;
         this.name = name;
         this.birthDate = date;
@@ -47,6 +61,14 @@ class User {
     @Override
     public String toString() {
         return "User [birthDate=" + birthDate + ", id=" + id + ", name=" + name + "]";
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 
 }

@@ -1,24 +1,24 @@
-package com.basic.spring.basicspring.services;
+// package com.basic.spring.basicspring.services;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
+// import javax.persistence.EntityManager;
+// import javax.persistence.PersistenceContext;
+// import javax.transaction.Transactional;
 
-import com.basic.spring.basicspring.entity.User;
+// import com.basic.spring.basicspring.entity.User;
 
-import org.springframework.stereotype.Repository;
+// import org.springframework.stereotype.Repository;
 
-@Repository
-@Transactional
-public class UserDAOService {
+// @Repository
+// @Transactional
+// public class UserDAOService {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+// @PersistenceContext
+// private EntityManager entityManager;
 
-    public long insert(User user) {
-        // Open transaction
-        entityManager.persist(user);
-        // Close transaction
-        return user.getId();
-    }
-}
+// public long insert(User user) {
+// // Open transaction
+// entityManager.persist(user);
+// // Close transaction
+// return user.getId();
+// }
+// }
